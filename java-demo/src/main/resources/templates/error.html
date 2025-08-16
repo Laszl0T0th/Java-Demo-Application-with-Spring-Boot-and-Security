@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>An Error Occurred</h1>
+    <p th:text="${errorMessage}">An error message will be displayed here.</p>
+    <a href="/login">Back to Login</a>
+</body>
+</html>

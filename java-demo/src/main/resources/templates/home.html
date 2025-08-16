@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e8f5e9; /* Light green background */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .card {
+            border: 1px solid #81c784; /* Light green border */
+        }
+        .card-header, .btn-primary {
+            background-color: #81c784; /* Light green primary color */
+            border-color: #81c784;
+        }
+        .card-header {
+            color: white;
+        }
+        .btn-danger {
+            background-color: #dc3545; /* Red color for logout button */
+            border-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Welcome</h1>
+        </div>
+		<div class="card-body">
+		    <p>You are logged in.</p>
+			<div class="card-body" style="text-align: center;"> 
+			    <div style="display: flex; justify-content: center; gap: 10px;"> 
+			        <a href="/employee" class="btn btn-success">Employees</a> 
+			        
+			        <form action="/logout" method="post" class="mb-0">
+			            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+			            <button type="submit" class="btn btn-danger">Logout</button>
+			        </form>
+			    </div>
+			</div>
+
+		</div>
+
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
